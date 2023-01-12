@@ -110,6 +110,10 @@ app.get('/products', (req, res) => {
 
 });
 
+app.get('/new', (req, res) => { 
+    res.send("New Route Here");
+});
+
 app.listen(3000, () => { 
     console.log('SERVER UP AND RUNNING ON PORT 3000');
 });
