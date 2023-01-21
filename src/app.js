@@ -116,6 +116,6 @@ app.get('/new', (req, res) => {
 });
 
 
-app.listen(8080, () => { 
+app.listen(3000, () => { 
     console.log('SERVER UP AND RUNNING ON PORT 8080');
 });
