@@ -8,14 +8,15 @@ app.set('view engine', 'hbs');
 
 console.log(path.join(__dirname, '../public'));
 
-app.use(xpress.static(path.join(__dirname, '../public')));
+app.use(xpress.static(path.join(__dirname, '../public/build')));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 
 app.get('', (req, res) => {
-    res.send('<h1>Hello WD19P learners</h1>');
+    // res.send('<h1>Hello WD19P learners</h1>');
+    res.sendFile(path.join(__dirname, '../public/build/index.html'));
 });
 
 app.get('/test', (req, res) => {
@@ -114,6 +115,7 @@ app.get('/new', (req, res) => {
     res.send("New Route Here");
 });
 
-app.listen(3000, () => { 
-    console.log('SERVER UP AND RUNNING ON PORT 3000');
+
+app.listen(8080, () => { 
+    console.log('SERVER UP AND RUNNING ON PORT 8080');
 });
